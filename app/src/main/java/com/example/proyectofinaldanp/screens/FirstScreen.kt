@@ -56,7 +56,7 @@ fun BodyContent(navController: NavController){
                 backgroundColor = Color.Green
             )
             ,onClick = {
-            navController.navigate(route = AppScreens.SecondSreen.route)
+            navController.navigate(route = AppScreens.SecondScreen.route)
         }) {
 
             Text(text = "Continuar",
