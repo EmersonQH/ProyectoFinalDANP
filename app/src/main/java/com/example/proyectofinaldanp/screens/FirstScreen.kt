@@ -32,7 +32,7 @@ fun BodyContent(navController: NavController){
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(painter = painterResource(id = R.drawable.imagen),
+        Image(painter = painterResource(id = R.drawable.imagenpreview),
             contentDescription = "logo")
 
         Text(text = "AGENDA VERDE",

@@ -5,6 +5,8 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -24,6 +26,7 @@ fun SecondScreen(navController: NavController){
 
 @Composable
 fun SecondBodyContent(navController: NavController){
+
     Column(
         modifier = Modifier
             .fillMaxSize(),
@@ -41,9 +44,11 @@ fun SecondBodyContent(navController: NavController){
             .width(275.dp))
         Spacer(modifier = Modifier.height(10.dp))
 
-        TextField(
-            value = "",
-            onValueChange = {  },
+
+        var state = remember { mutableStateOf("")}
+        OutlinedTextField(
+            value = state.value,
+            onValueChange = {  state.value = it},
             label = { Text("Nombre de la planta") }
         )
         Spacer(modifier = Modifier.height(10.dp))

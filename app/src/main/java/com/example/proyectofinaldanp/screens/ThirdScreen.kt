@@ -52,9 +52,10 @@ fun ThirdBodyContent(navController: NavController){
                 .height(30.dp))
         Spacer(modifier = Modifier.height(10.dp))
 
+        var valorHumedad = "%"
         TextField(value = "",
             onValueChange = {  },
-            label = { Text("%") })
+            label = { Text(valorHumedad)},readOnly = true)
 
         Spacer(modifier = Modifier.height(10.dp))
         Text(text = "Fecha",
@@ -65,9 +66,11 @@ fun ThirdBodyContent(navController: NavController){
                 .height(30.dp))
         Spacer(modifier = Modifier.height(10.dp))
 
+
+        var datoFecha= "31/07/2023"
         TextField(value = "",
             onValueChange = {  },
-            label = { Text("0/0/0/") })
+            label = { Text(datoFecha) }, readOnly = true)
 
 
         Spacer(modifier = Modifier.height(20.dp))
