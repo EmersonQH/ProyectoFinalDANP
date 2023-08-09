@@ -19,17 +19,19 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.proyectofinaldanp.R
+import com.example.proyectofinaldanp.navigation.AppScreens
 
 @Composable
-fun BibliotecaScreen() {
+fun BibliotecaScreen(navController: NavController) {
     Scaffold {
-        BibliotecaBodyContent()
+        BibliotecaBodyContent(navController)
     }
 }
 
 @Composable
-fun BibliotecaBodyContent(){
+fun BibliotecaBodyContent(navController: NavController){
     Box(
         modifier = Modifier.padding(18.dp, top = 10.dp),
         contentAlignment = Alignment.Center,
@@ -46,7 +48,7 @@ fun BibliotecaBodyContent(){
             buscardor()
             Spacer(modifier = Modifier.height(20.dp))
             InfList()
-            IconosNav()
+            IconosNav(navController)
         }
     }
 }
@@ -54,15 +56,15 @@ fun BibliotecaBodyContent(){
 @Composable
 fun buscardor(){
 
-    // var state = remember { mutableStateOf("") }
+    var state = remember { mutableStateOf("") }
     Row(
         verticalAlignment  = Alignment.CenterVertically,
     ) {
         OutlinedTextField(
             modifier = Modifier
                 .size(width = 250.dp, height = 60.dp),
-            value = ""/*state.value*/,
-            onValueChange = {  " "/*state.value = it*/},
+            value = state.value,
+            onValueChange = {  state.value = it},
             label = { Text(" Shared")
             }
         )
@@ -112,7 +114,7 @@ fun InfList(){
 
 
 @Composable
-fun IconosNav(){
+fun IconosNav(navController: NavController){
 
     Column(
         modifier = Modifier
@@ -131,17 +133,20 @@ fun IconosNav(){
         Spacer(modifier = Modifier.height(16.dp))
 
         FloatingActionButton(
-            onClick = { "" }
+            onClick = {
+
+               navController.navigate(route = AppScreens.SecondScreen.route)
+            }
         ) {
             Icon(Icons.Filled.Add, "")
         }
 
     }
 }
-
+/*
 //@Preview(showBackground = true)
 @Preview(showSystemUi = true)
 @Composable
 fun BibliotecaDefaultPreview(){
     BibliotecaScreen()
-}
+}*/

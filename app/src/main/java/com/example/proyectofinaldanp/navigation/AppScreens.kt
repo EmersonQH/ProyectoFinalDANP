@@ -6,5 +6,6 @@ sealed class AppScreens(val route: String){
     object ThirdScreen: AppScreens(route ="Third_screen")
     object ListScreen: AppScreens(route ="List_screen")
     object InforScreen: AppScreens(route ="Infor_screen")
+    object BibliotecaScreen: AppScreens(route ="Biblioteca_screen")
 
 }

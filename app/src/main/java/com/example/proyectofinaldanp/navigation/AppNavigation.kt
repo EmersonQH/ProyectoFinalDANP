@@ -26,5 +26,8 @@ fun AppNavigation(){
         composable(route = AppScreens.InforScreen.route){
             InforScreen(navController)
         }
+        composable(route = AppScreens.BibliotecaScreen.route){
+            BibliotecaScreen(navController)
+        }
     }
 }
