@@ -29,5 +29,14 @@ fun AppNavigation(){
         composable(route = AppScreens.BibliotecaScreen.route){
             BibliotecaScreen(navController)
         }
+        composable(route = AppScreens.RegadoScreen.route){
+            RegadoScreen(navController)
+        }
+        composable(route = AppScreens.RegadoTerminadoScreen.route){
+            RegadoTerminadoScreen(navController)
+        }
+        composable(route = AppScreens.SensorRegadoScreen.route){
+            SensorRegadoScreen(navController)
+        }
     }
 }

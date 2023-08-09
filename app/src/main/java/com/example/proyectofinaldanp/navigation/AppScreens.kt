@@ -7,5 +7,8 @@ sealed class AppScreens(val route: String){
     object ListScreen: AppScreens(route ="List_screen")
     object InforScreen: AppScreens(route ="Infor_screen")
     object BibliotecaScreen: AppScreens(route ="Biblioteca_screen")
+    object RegadoScreen: AppScreens(route ="Regado_screen")
+    object RegadoTerminadoScreen: AppScreens(route ="RegadoTerminado_screen")
+    object SensorRegadoScreen: AppScreens(route ="SensorRegado_screen")
 
 }

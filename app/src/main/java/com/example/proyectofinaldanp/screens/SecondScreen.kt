@@ -56,9 +56,25 @@ fun SecondBodyContent(navController: NavController){
             onValueChange = {  state.value = it},
             label = { Text("Nombre de la planta") }
         )
-        Spacer(modifier = Modifier.height(10.dp))
-        Text(text = "Ingrese una imagen para identificar su planta")
 
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(text = "Ingrese una breve Descripcion de la planta",
+            modifier = Modifier
+                .width(275.dp))
+        Spacer(modifier = Modifier.height(10.dp))
+
+
+        var stater = remember { mutableStateOf("")}
+        OutlinedTextField(
+            value = stater.value,
+            onValueChange = {  stater.value = it},
+            label = { Text("Descripcion de la planta") }
+        )
+        Spacer(modifier = Modifier.height(10.dp))
+        Text(text = "Ingrese una imagen para identificar su planta",
+            modifier = Modifier
+                .width(275.dp))
+        Spacer(modifier = Modifier.height(10.dp))
 
         var imageUri by remember { mutableStateOf<Uri?>(null) }
         val context = LocalContext.current
@@ -68,6 +84,7 @@ fun SecondBodyContent(navController: NavController){
             rememberLauncherForActivityResult(contract = ActivityResultContracts.GetContent()) { uri: Uri? ->
                 imageUri = uri
             }
+        /*
         imageUri?.let {
             if (Build.VERSION.SDK_INT < 28) {
                 bitmap.value = MediaStore.Images
@@ -86,7 +103,7 @@ fun SecondBodyContent(navController: NavController){
                         .padding(20.dp)
                 )
             }
-        }
+        }*/
 
         Spacer(modifier = Modifier.height(12.dp))
         Button(
@@ -98,17 +115,17 @@ fun SecondBodyContent(navController: NavController){
             color = Color.White)
         }
 
-        Spacer(modifier = Modifier.height(180.dp))
+        Spacer(modifier = Modifier.height(160.dp))
 
         Button(
             colors = ButtonDefaults.buttonColors(
                 backgroundColor = Color.Green
             ),
             onClick = {
-            navController.navigate(route = AppScreens.ThirdScreen.route)
-            //navController.popBackStack()
+            //navController.navigate(route = AppScreens.ThirdScreen.route)
+            navController.popBackStack()
         }) {
-            Text(text = "Siguiente",
+            Text(text = "Guardar",
             color = Color.White)
             
         }

@@ -99,13 +99,13 @@ fun InfList(){
             Text(
                 text = "Descripcion",
                 textAlign = TextAlign.Center,
-                fontSize = 10.sp
+                fontSize = 15.sp
             )
             Spacer(modifier = Modifier.height(6.dp))
             Text(
                 text = "Temperatura / fecha",
                 textAlign = TextAlign.Center,
-                fontSize = 10.sp
+                fontSize = 15.sp
             )
         }
 
@@ -125,7 +125,9 @@ fun IconosNav(navController: NavController){
     ) {
 
         FloatingActionButton(
-            onClick = { "" },
+            onClick = {
+                navController.navigate(route = AppScreens.SensorRegadoScreen.route)
+            },
         ) {
             Icon(Icons.Filled.Star, "")
         }
@@ -134,7 +136,6 @@ fun IconosNav(navController: NavController){
 
         FloatingActionButton(
             onClick = {
-
                navController.navigate(route = AppScreens.SecondScreen.route)
             }
         ) {
